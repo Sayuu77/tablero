@@ -32,7 +32,7 @@ st.markdown("""
         font-weight: 300;
     }    
     .section-title {
-        color: #000000;
+        color: #ffffff;
         font-weight: 500;
         margin-bottom: 0.8rem;
         font-size: 0.9rem;
