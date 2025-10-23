@@ -12,7 +12,7 @@ st.set_page_config(
 st.markdown("""
 <style>
     .stApp {
-        background-color: #fafafa;
+        background-color: #000000;
     }
     
     .title {
