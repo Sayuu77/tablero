@@ -8,17 +8,17 @@ st.set_page_config(
     layout="centered"
 )
 
-# Estilos CSS minimalistas con fondo negro
+# Estilos CSS minimalistas con un solo color
 st.markdown("""
 <style>
     .stApp {
-        background-color: #000000;
+        background-color: #fafafa;
     }
     
     .title {
         font-size: 2rem;
         text-align: center;
-        color: #FFFFFF;
+        color: #4A4A4A;
         margin-bottom: 0.5rem;
         font-weight: 400;
         letter-spacing: -0.5px;
@@ -26,48 +26,16 @@ st.markdown("""
     
     .subtitle {
         text-align: center;
-        color: #CCCCCC;
+        color: #7A7A7A;
         margin-bottom: 2rem;
         font-size: 1rem;
         font-weight: 300;
-    }
-    
-    .sidebar-section {
-        background: #1A1A1A;
-        border-radius: 8px;
-        padding: 1rem;
-        margin: 0.5rem 0;
-        border: 1px solid #333333;
-    }
-    
+    }    
     .section-title {
-        color: #FFFFFF;
+        color: #000000;
         font-weight: 500;
         margin-bottom: 0.8rem;
         font-size: 0.9rem;
-    }
-    
-    /* Centrar el canvas */
-    .main .block-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    /* Estilos para los controles en modo oscuro */
-    .stSlider > div > div {
-        background: #333333;
-    }
-    
-    .stSelectbox > div > div {
-        background: #1A1A1A;
-        color: white;
-        border: 1px solid #333333;
-    }
-    
-    .stColorPicker > div > div {
-        border: 1px solid #333333;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -103,22 +71,19 @@ with col1:
         # Colores
         st.markdown('<div class="sidebar-section">', unsafe_allow_html=True)
         st.markdown('<div class="section-title">Colores</div>', unsafe_allow_html=True)
-        stroke_color = st.color_picker("Color de trazo", "#FFFFFF")
-        bg_color = st.color_picker("Color de fondo", "#000000")
+        stroke_color = st.color_picker("Color de trazo", "#000000")
+        bg_color = st.color_picker("Color de fondo", "#FFFFFF")
         st.markdown('</div>', unsafe_allow_html=True)
 
 with col2:
-    # Contenedor centrado para el canvas
-    col_left, col_center, col_right = st.columns([1, 2, 1])
-    with col_center:
-        # Canvas de dibujo (EXACTAMENTE como en el código original)
-        canvas_result = st_canvas(
-            fill_color="rgba(255, 165, 0, 0.3)",
-            stroke_width=stroke_width,
-            stroke_color=stroke_color,
-            background_color=bg_color,
-            height=canvas_height,
-            width=canvas_width,
-            drawing_mode=drawing_mode,
-            key=f"canvas_{canvas_width}_{canvas_height}",
-        )
+    # Canvas de dibujo (EXACTAMENTE como en el código original)
+    canvas_result = st_canvas(
+        fill_color="rgba(255, 165, 0, 0.3)",
+        stroke_width=stroke_width,
+        stroke_color=stroke_color,
+        background_color=bg_color,
+        height=canvas_height,
+        width=canvas_width,
+        drawing_mode=drawing_mode,
+        key=f"canvas_{canvas_width}_{canvas_height}",
+    )
