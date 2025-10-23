@@ -31,15 +31,6 @@ st.markdown("""
         font-size: 1rem;
         font-weight: 300;
     }
-    
-    .sidebar-section {
-        background: white;
-        border-radius: 8px;
-        padding: 1rem;
-        margin: 0.5rem 0;
-        border: 1px solid #E0E0E0;
-    }
-    
     .section-title {
         color: #4A4A4A;
         font-weight: 500;
